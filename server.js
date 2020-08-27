@@ -1,7 +1,7 @@
 
-// RSA
-
 const NodeRSA = require('node-rsa');
+const crypto = require('crypto');
+
 
 cryptRSA();
 
@@ -36,11 +36,8 @@ function cryptRSA() {
 
 }
 
-// AES
 
-const crypto = require('crypto');
 const key = "MySecretKeyUltimate";
-let value = encode("Mensaje ultra secreto", key);
 
 function encode(text, key) {
     console.log("========================= ENCRIPTAR AES ===========================");
@@ -50,6 +47,7 @@ function encode(text, key) {
 	return(mystr);
 }
 
+let value = encode("Mensaje ultra secreto", key);
 console.log('El mensaje cifrado es: ' + value );
 
 function decode(message, key) {
